@@ -7,6 +7,7 @@ import communityImg from "@/assets/u9.jpg";
 import profileImg from "@/assets/u3.png";
 import portraitImg from "@/assets/u2.jpg";
 import AthleteStoryModal from "./AthleteStoryModal";
+import BusinessmanModal from "./BusinessmanModal";
 
 interface IdentityCardProps {
   image: string;
@@ -80,11 +81,13 @@ const identities = [
     image: profileImg,
     label: "The Businessman",
     description: "Sharp mind, sharper vision. Building empires with intention.",
+    hasStory: true,
   },
 ];
 
 const IdentityGrid = () => {
   const [athleteOpen, setAthleteOpen] = useState(false);
+  const [businessmanOpen, setBusinessmanOpen] = useState(false);
 
   return (
     <>
@@ -116,12 +119,18 @@ const IdentityGrid = () => {
             <IdentityCard {...identities[2]} index={2} className="aspect-square" />
             <IdentityCard {...identities[3]} index={3} className="aspect-square" />
             <IdentityCard {...identities[4]} index={4} className="aspect-video lg:col-span-2" />
-            <IdentityCard {...identities[5]} index={5} className="aspect-square sm:hidden lg:block" />
+            <IdentityCard
+              {...identities[5]}
+              index={5}
+              className="aspect-square sm:hidden lg:block"
+              onClick={() => setBusinessmanOpen(true)}
+            />
           </div>
         </div>
       </section>
 
       <AthleteStoryModal isOpen={athleteOpen} onClose={() => setAthleteOpen(false)} />
+      <BusinessmanModal isOpen={businessmanOpen} onClose={() => setBusinessmanOpen(false)} />
     </>
   );
 };
