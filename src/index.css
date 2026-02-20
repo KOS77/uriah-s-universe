@@ -6,33 +6,33 @@
 
 @layer base {
   :root {
-    --background: 270 20% 7%;
-    --foreground: 280 10% 93%;
+    --background: 270 8% 88%;
+    --foreground: 270 20% 12%;
 
-    --card: 270 18% 11%;
-    --card-foreground: 280 10% 93%;
+    --card: 270 10% 95%;
+    --card-foreground: 270 20% 12%;
 
-    --popover: 270 18% 11%;
-    --popover-foreground: 280 10% 93%;
+    --popover: 270 10% 95%;
+    --popover-foreground: 270 20% 12%;
 
-    --primary: 340 45% 45%;
-    --primary-foreground: 280 10% 95%;
+    --primary: 340 45% 40%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 265 20% 16%;
-    --secondary-foreground: 280 10% 88%;
+    --secondary: 265 12% 82%;
+    --secondary-foreground: 270 20% 15%;
 
-    --muted: 265 15% 18%;
-    --muted-foreground: 280 8% 55%;
+    --muted: 265 8% 78%;
+    --muted-foreground: 270 10% 40%;
 
-    --accent: 260 50% 55%;
-    --accent-foreground: 280 10% 95%;
+    --accent: 260 45% 50%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 270 15% 20%;
-    --input: 270 15% 20%;
-    --ring: 340 45% 45%;
+    --border: 270 10% 78%;
+    --input: 270 10% 78%;
+    --ring: 340 45% 40%;
 
     --radius: 0.25rem;
 
@@ -56,8 +56,16 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
     font-family: var(--font-body);
+    background: linear-gradient(
+      170deg,
+      hsl(270, 10%, 92%) 0%,
+      hsl(265, 12%, 86%) 30%,
+      hsl(260, 14%, 82%) 60%,
+      hsl(270, 16%, 78%) 100%
+    );
+    min-height: 100vh;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -67,17 +75,17 @@
 
 @layer utilities {
   .text-gradient-gold {
-    background: linear-gradient(135deg, hsl(340, 45%, 50%), hsl(260, 50%, 60%));
+    background: linear-gradient(135deg, hsl(340, 50%, 38%), hsl(260, 50%, 45%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .overlay-dark {
-    background: linear-gradient(180deg, hsla(270, 20%, 5%, 0) 0%, hsla(270, 20%, 5%, 0.85) 100%);
+    background: linear-gradient(180deg, hsla(270, 20%, 10%, 0) 0%, hsla(270, 20%, 10%, 0.85) 100%);
   }
 
   .overlay-dark-full {
-    background: hsla(270, 20%, 5%, 0.5);
+    background: hsla(270, 20%, 10%, 0.5);
   }
 }
