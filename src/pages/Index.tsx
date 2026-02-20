@@ -1,5 +1,6 @@
 import HeroSection from "@/components/HeroSection";
 import IdentityGrid from "@/components/IdentityGrid";
+import SpokenWordSection from "@/components/SpokenWordSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -7,6 +8,7 @@ const Index = () => {
     <main className="min-h-screen bg-background">
       <HeroSection />
       <IdentityGrid />
+      <SpokenWordSection />
       <Footer />
     </main>
   );
