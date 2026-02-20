@@ -1,6 +1,7 @@
 import HeroSection from "@/components/HeroSection";
 import IdentityGrid from "@/components/IdentityGrid";
 import SpokenWordSection from "@/components/SpokenWordSection";
+import MassageSection from "@/components/MassageSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -9,6 +10,7 @@ const Index = () => {
       <HeroSection />
       <IdentityGrid />
       <SpokenWordSection />
+      <MassageSection />
       <Footer />
     </main>
   );
