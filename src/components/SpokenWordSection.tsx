@@ -1,11 +1,20 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import epiphanyImg from "@/assets/epiphany-book.jpeg";
 import moodSwingsImg from "@/assets/mood-swings-book.jpeg";
 import readingImg from "@/assets/uriah-reading.jpeg";
 import speakingImg from "@/assets/uriah-speaking.jpeg";
 import truthLogo from "@/assets/truth-logo.png";
+import BookPurchaseModal from "./BookPurchaseModal";
+
+const books = [
+  { title: "Epiphany", subtitle: "Poems in the Key of Love", image: epiphanyImg },
+  { title: "Mood Swings", subtitle: "Poems & Other Rants — Second Edition", image: moodSwingsImg },
+];
 
 const SpokenWordSection = () => {
+  const [selectedBook, setSelectedBook] = useState<typeof books[0] | null>(null);
+
   return (
     <section className="px-4 py-20 sm:px-6 lg:px-8 bg-card">
       <div className="mx-auto max-w-7xl">
@@ -33,7 +42,8 @@ const SpokenWordSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6, delay: 0 }}
-            className="group relative overflow-hidden row-span-2 rounded-sm"
+            className="group relative overflow-hidden row-span-2 rounded-sm cursor-pointer"
+            onClick={() => setSelectedBook(books[0])}
           >
             <img
               src={epiphanyImg}
@@ -57,7 +67,8 @@ const SpokenWordSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="group relative overflow-hidden row-span-2 rounded-sm"
+            className="group relative overflow-hidden row-span-2 rounded-sm cursor-pointer"
+            onClick={() => setSelectedBook(books[1])}
           >
             <img
               src={moodSwingsImg}
@@ -136,6 +147,11 @@ const SpokenWordSection = () => {
           </motion.div>
         </div>
       </div>
+      <BookPurchaseModal
+        isOpen={!!selectedBook}
+        onClose={() => setSelectedBook(null)}
+        book={selectedBook || books[0]}
+      />
     </section>
   );
 };
