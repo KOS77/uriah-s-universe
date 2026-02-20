@@ -31,7 +31,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8 }}
           className="font-display text-6xl font-bold tracking-tight sm:text-8xl md:text-9xl"
         >
-          <span className="text-gradient-gold">URIAH</span>
+          <span className="text-foreground">URIAH</span>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0 }}
